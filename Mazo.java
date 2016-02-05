@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Mazo here.
  * 
@@ -8,7 +8,7 @@
 public class Mazo
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private 
 
     /**
      * Constructor for objects of class Mazo
