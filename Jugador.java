@@ -10,7 +10,7 @@ public class Jugador
     // nombre de la persona
     private String id;
     //lista de cartas
-    private ArrayList<Carta> cartas;
+    private ArrayList<Carta> cartasDeJugador;
 
     /**
      * Constructor de la clase Jugador 
@@ -18,6 +18,7 @@ public class Jugador
     public Jugador(String id)
     {
         this.id = id;
+        ArrayList<Carta> cartasDeJugador = new ArrayList<Carta>();
     }
 
     /**
@@ -36,14 +37,19 @@ public class Jugador
         cartas.add(unaCarta);
 
     }
-    
+
     /**
      * devuelve una colección de cadenas con los nombres de las cartas.
      */
-    public void cartasQueTieneEnLaMano()
+    public ArrayList<String> cartasQueTieneEnLaMano()
     {
-        for(Carta baraja : cartas) {
-            System.out.println(baraja.getNombre());
+        
+        {
+            ArrayList<String> coleccionString = new ArrayList<String>();
+            for (Carta objetoCarta : cartasDeJugador) {
+                coleccionString.add(objetoCarta.getNombre());
+            }
+            return coleccionString;
         }
     }
 }
