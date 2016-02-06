@@ -25,7 +25,7 @@ public class Carta
     public String getNombre()
     {
         String nombre;
-        nombre = valor + "de " + palo;
+        nombre = valor + " de " + palo;
         if (valor == 1)
         {
             nombre = "As de " + palo;
