@@ -8,14 +8,14 @@ import java.util.ArrayList;
 public class Jugador
 {
     // nombre de la persona
-    private String id;
+    private int id;
     //lista de cartas
     private ArrayList<Carta> cartasDeJugador;
 
     /**
      * Constructor de la clase Jugador 
      */
-    public Jugador(String id)
+    public Jugador(int id)
     {
         this.id = id;
         ArrayList<Carta> cartasDeJugador = new ArrayList<Carta>();
@@ -24,7 +24,7 @@ public class Jugador
     /**
      * devuelve el id del jugador
      */
-    public String getId()
+    public  int getId()
     {
         return id;
     }

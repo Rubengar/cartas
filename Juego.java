@@ -7,22 +7,22 @@ import java.util.ArrayList;
  */
 public class Juego
 {
-    // jugadores que juegan
-    private int numeroJugadores;
-    //arraylist de los jugadores en el juego
+   //arraylist de los jugadores en el juego
     private ArrayList<Jugador> jugadoresMesa;
+   //objeto tipo mazo para poder acceder a los datos de este y sus metodos
+   private Mazo mazo;
 
     /**
      * Constructor for objects of class Juego
      */
     public Juego(int numeroJugadores)
     {
-        jugadoresMesa = new Arraylist<Jugador>();
+        jugadoresMesa = new ArrayList<Jugador>();
         mazo = new Mazo();
         mazo.barajar();
         int cont = 1;
         if (numeroJugadores<=1){
-            while(contador<=4){
+            while(cont<=4){
                 Jugador incluirJugador = new Jugador(cont);
                 jugadoresMesa.add(incluirJugador);
                 cont++;
@@ -30,7 +30,7 @@ public class Juego
         }
         else{
 
-            while(contador<=numeroJugadores){
+            while(cont<=numeroJugadores){
                 Jugador incluirJugador = new Jugador(cont);
                 jugadoresMesa.add(incluirJugador);
                 cont++;
