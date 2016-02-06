@@ -34,7 +34,7 @@ public class Jugador
      */
     public void recibirCarta(Carta unaCarta)
     {
-        cartas.add(unaCarta);
+        cartasDeJugador.add(unaCarta);
 
     }
 
@@ -43,7 +43,6 @@ public class Jugador
      */
     public ArrayList<String> cartasQueTieneEnLaMano()
     {
-        
         {
             ArrayList<String> coleccionString = new ArrayList<String>();
             for (Carta objetoCarta : cartasDeJugador) {

@@ -41,6 +41,7 @@ public class Carta
         }
         return nombre;
     }
+    
     /**
      * Devuelve  el valor de la carta
      */
@@ -48,6 +49,7 @@ public class Carta
     {
         return valor;
     }
+    
     /**
      * Devuelve el palo de la carta 
      */
