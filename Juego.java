@@ -11,9 +11,8 @@ public class Juego
     private ArrayList<Jugador> jugadoresMesa;
     //objeto tipo mazo para poder acceder a los datos de este y sus metodos
     private Mazo mazo;
-    //
+    //guarda el numero de jugadores 
     private int numeroJugadores ;
-    //
 
     /**
      * Constructor for objects of class Juego
@@ -25,12 +24,12 @@ public class Juego
         mazo = new Mazo();
         mazo.barajar();
         int cont = 1;
-        //si el numero de jugadores es menosr de dos o mayor de 8 como en las reglas del poker 
-        //añade automaticamente 4 jugadores para jugar la partida
+        //si el numero de jugadores de pasa de los de mesa sale error
         if (numeroJugadores > 8 ){
             System.out.println("exceso de jugadores maximo 8 jugadores por mesa ");
         }
-
+        //si el numero de jugadores es menosr de dos o mayor de 8 como en las reglas del poker 
+        //añade automaticamente 4 jugadores para jugar la partida
         if (numeroJugadores < 2 ){
             numeroJugadores = 4;
             while(cont <= numeroJugadores){
@@ -58,16 +57,21 @@ public class Juego
     public void repartir()
 
     {
-       if (numeroJugadores < 2 ){
-        numeroJugadores = 4;
-       }
+        //lo utilizamos para cambiar la variable de el numero de jugadores si este es menos de 2 como ya k sino no repartiria a laas 4 jugadores como es devido 
+        if (numeroJugadores < 2 ){
+            numeroJugadores = 4;
+        }
+        //numero de cartas totales 
         int numeroDeCartas = 52;
+        //numero de veces que tiene que hacer el bucle while para repartir las cartas a los jugadores 
         int cartasRepartir;
         cartasRepartir = (numeroDeCartas/numeroJugadores)*numeroJugadores;
+        //las posicones que ocupan los jugadores en el arraylist 
         int posicionJugador = 0;
+        //contador para saber las veces que a echo el bucle while 
         int contador = 0;
         mazo.barajar();
-       while (contador<cartasRepartir){
+        while (contador<cartasRepartir){
             jugadoresMesa.get(posicionJugador).recibirCarta(mazo.tomarPrimera());
             posicionJugador++;
             if (posicionJugador == numeroJugadores){
