@@ -13,6 +13,7 @@ public class Juego
     private Mazo mazo;
     //
     private int numeroJugadores ;
+    //
 
     /**
      * Constructor for objects of class Juego
@@ -25,8 +26,12 @@ public class Juego
         mazo.barajar();
         int cont = 1;
         //si el numero de jugadores es menosr de dos o mayor de 8 como en las reglas del poker 
-        //añade automaticamente 4 jugadores para jugar la partida 
-        if (numeroJugadores < 2 || numeroJugadores > 8){
+        //añade automaticamente 4 jugadores para jugar la partida
+        if (numeroJugadores > 8 ){
+            System.out.println("exceso de jugadores maximo 8 jugadores por mesa ");
+        }
+
+        if (numeroJugadores < 2 ){
             numeroJugadores = 4;
             while(cont <= numeroJugadores){
                 Jugador incluirJugador = new Jugador(cont);
@@ -34,6 +39,7 @@ public class Juego
                 cont++;
             }
         }
+
         else{
             //si el numero de jugadores es 2 o mayor sin pasarse de 8 
             //añade el numero de jugadores hasta que sea el indicado entre diclos numeros 
@@ -52,13 +58,16 @@ public class Juego
     public void repartir()
 
     {
+       if (numeroJugadores < 2 ){
+        numeroJugadores = 4;
+       }
         int numeroDeCartas = 52;
         int cartasRepartir;
-        cartasRepartir = (numeroDeCartas/numeroJugadores);
+        cartasRepartir = (numeroDeCartas/numeroJugadores)*numeroJugadores;
         int posicionJugador = 0;
-        int contador = 1;
+        int contador = 0;
         mazo.barajar();
-        while (contador<cartasRepartir){
+       while (contador<cartasRepartir){
             jugadoresMesa.get(posicionJugador).recibirCarta(mazo.tomarPrimera());
             posicionJugador++;
             if (posicionJugador == numeroJugadores){
