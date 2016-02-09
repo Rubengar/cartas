@@ -28,6 +28,7 @@ public class Mazo
                                ,carta = new Carta(5,"Tréboles"),carta = new Carta(6,"Tréboles"),carta = new Carta(7,"Tréboles"),carta = new Carta(8,"Tréboles"),carta = new Carta(9,"Tréboles")
                                ,carta = new Carta(10,"Tréboles"),carta = new Carta(11,"Tréboles"),carta = new Carta(12,"Tréboles"),carta = new Carta(13,"Tréboles")));
     }
+    
     /**
      * Metodo que barajalas cartas
      */
@@ -35,6 +36,7 @@ public class Mazo
     {
         Collections.shuffle(mazo);
     }
+    
     /**
      * Metodo que devuelve la primera carta y la elimina de la baraja
      */

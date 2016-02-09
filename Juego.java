@@ -11,17 +11,22 @@ public class Juego
     private ArrayList<Jugador> jugadoresMesa;
     //objeto tipo mazo para poder acceder a los datos de este y sus metodos
     private Mazo mazo;
+    //
+    private int numeroJugadores ;
 
     /**
      * Constructor for objects of class Juego
      */
     public Juego(int numeroJugadores)
     {
+        this.numeroJugadores = numeroJugadores;
         jugadoresMesa = new ArrayList<Jugador>();
         mazo = new Mazo();
         mazo.barajar();
         int cont = 1;
-        if (numeroJugadores < 1 || numeroJugadores > 8){
+        //si el numero de jugadores es menosr de dos o mayor de 8 como en las reglas del poker 
+        //añade automaticamente 4 jugadores para jugar la partida 
+        if (numeroJugadores < 2 || numeroJugadores > 8){
             numeroJugadores = 4;
             while(cont <= numeroJugadores){
                 Jugador incluirJugador = new Jugador(cont);
@@ -30,27 +35,36 @@ public class Juego
             }
         }
         else{
-            
+            //si el numero de jugadores es 2 o mayor sin pasarse de 8 
+            //añade el numero de jugadores hasta que sea el indicado entre diclos numeros 
             while(cont <= numeroJugadores){
                 Jugador incluirJugador = new Jugador(cont);
                 jugadoresMesa.add(incluirJugador);
                 cont++;
             }
-        
-        
+
         }
-        
     }
+
     /**
      * metodo para repartir todas las cartas 
      */
     public void repartir()
+
     {
+        int numeroDeCartas = 52;
+        int cartasRepartir;
+        cartasRepartir = (numeroDeCartas/numeroJugadores);
+        int posicionJugador = 0;
+        int contador = 1;
         mazo.barajar();
-        int size = 1;
-        while(mazo.quedan() >= jugadoresMesa.size()){
-            jugadoresMesa.get(size).recibirCarta(mazo.tomarPrimera());
-            size++;
+        while (contador<cartasRepartir){
+            jugadoresMesa.get(posicionJugador).recibirCarta(mazo.tomarPrimera());
+            posicionJugador++;
+            if (posicionJugador == numeroJugadores){
+                posicionJugador = 0;
+            }
+            contador++;
 
         }
     }
