@@ -38,13 +38,13 @@ public class Mazo
     /**
      * Metodo que devuelve la primera carta y la elimina de la baraja
      */
-    public String tomarPrimera()
+    public Carta tomarPrimera()
     {
         if (mazo.isEmpty())
         {
             return null;
         }
-        return mazo.remove(0).getNombre();
+        return mazo.remove(0);
     }
     /**
      * Metodo que devuelve el numero de cartas que quedan en la baraja
