@@ -39,7 +39,7 @@ public class Jugador
     }
 
     /**
-     * devuelve una colección de cadenas con los nombres de las cartas.
+     * devuelve una coleccion de cadenas con los nombres de las cartas.
      */
     public ArrayList<String> cartasQueTieneEnLaMano()
     {

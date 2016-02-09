@@ -7,10 +7,10 @@ import java.util.ArrayList;
  */
 public class Juego
 {
-   //arraylist de los jugadores en el juego
+    //arraylist de los jugadores en el juego
     private ArrayList<Jugador> jugadoresMesa;
-   //objeto tipo mazo para poder acceder a los datos de este y sus metodos
-   private Mazo mazo;
+    //objeto tipo mazo para poder acceder a los datos de este y sus metodos
+    private Mazo mazo;
 
     /**
      * Constructor for objects of class Juego
@@ -39,6 +39,7 @@ public class Juego
         }
 
     }
+
     /**
      * An example of a method - replace this comment with your own
      * 
@@ -47,6 +48,26 @@ public class Juego
      */
     public void repartir()
     {
+        mazo.barajar();
+        int size = 1;
+        while(mazo.quedan() >= jugadoresMesa.size()){
+            jugadoresMesa.get(size).recibirCarta(mazo.tomarPrimera());
+            size++;
+            
+
+        }
+    }
+
+    /**
+     * 
+     */
+    public void mostrarCartasJugadores()
+    {
+        for(Jugador jugadorCartas : jugadoresMesa){
+            System.out.println("El jugador " + jugadorCartas.getId());
+            System.out.println("Tiene esta mano"  + jugadorCartas.cartasQueTieneEnLaMano());
+
+        }
 
     }
 }
