@@ -18,7 +18,7 @@ public class Jugador
     public Jugador(int id)
     {
         this.id = id;
-        ArrayList<Carta> cartasDeJugador = new ArrayList<Carta>();
+        cartasDeJugador = new ArrayList<Carta>();
     }
 
     /**
