@@ -30,7 +30,7 @@ public class Juego
         }
         //si el numero de jugadores es menosr de dos o mayor de 8 como en las reglas del poker 
         //añade automaticamente 4 jugadores para jugar la partida
-        if (numeroJugadores < 2 ){
+        else if(numeroJugadores < 2 ){
             numeroJugadores = 4;
             while(cont <= numeroJugadores){
                 Jugador incluirJugador = new Jugador(cont);
@@ -65,20 +65,15 @@ public class Juego
         int numeroDeCartas = 52;
         //numero de veces que tiene que hacer el bucle while para repartir las cartas a los jugadores 
         int cartasRepartir;
-        cartasRepartir = (numeroDeCartas/numeroJugadores)*numeroJugadores;
-        //las posicones que ocupan los jugadores en el arraylist 
-        int posicionJugador = 0;
+        cartasRepartir = (numeroDeCartas/numeroJugadores);
         //contador para saber las veces que a echo el bucle while 
         int contador = 0;
         mazo.barajar();
         while (contador<cartasRepartir){
-            jugadoresMesa.get(posicionJugador).recibirCarta(mazo.tomarPrimera());
-            posicionJugador++;
-            if (posicionJugador == numeroJugadores){
-                posicionJugador = 0;
+            for (Jugador repartir : jugadoresMesa){
+                repartir.recibirCarta(mazo.tomarPrimera());
             }
             contador++;
-
         }
     }
 
