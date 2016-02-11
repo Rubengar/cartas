@@ -31,8 +31,8 @@ public class Juego
         //si el numero de jugadores es menosr de dos o mayor de 8 como en las reglas del poker 
         //añade automaticamente 4 jugadores para jugar la partida
         else if(numeroJugadores < 2 ){
-            numeroJugadores = 4;
-            while(cont <= numeroJugadores){
+            this.numeroJugadores = 4;
+            while(cont <= this.numeroJugadores){
                 Jugador incluirJugador = new Jugador(cont);
                 jugadoresMesa.add(incluirJugador);
                 cont++;
@@ -57,10 +57,6 @@ public class Juego
     public void repartir()
 
     {
-        //lo utilizamos para cambiar la variable de el numero de jugadores si este es menos de 2 como ya k sino no repartiria a laas 4 jugadores como es devido 
-        if (numeroJugadores < 2 ){
-            numeroJugadores = 4;
-        }
         //numero de cartas totales 
         int numeroDeCartas = 52;
         //numero de veces que tiene que hacer el bucle while para repartir las cartas a los jugadores 
